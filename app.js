@@ -1,10 +1,10 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 // =====================================
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 // =====================================
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -16,28 +16,51 @@ function getComputerChoice(){
     return choices[randomNumber];
 }
 
-getComputerChoice();
+function win(userChoice, computerChoice){
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win!`
+}
 
-function game (userChoice){
+function convertToWord(letter) {
+    if(letter === "r") return "Rock";
+    if(letter === "p") return "Paper";
+    return "Scissors";
+
+}
+
+function lose() {
+    computerScore++;
+    computerScore_span.innerHTML = computerScore
+    userScore_span.innerHTML = userScore;
+}
+
+function draw() {
+    computerScore_span.innerHTML = computerScore
+    userScore_span.innerHTML = userScore;
+}
+
+function game(userChoice) {
     const computerChoice = getComputerChoice();
-    switch (userChoice + computerChoice){
+    switch (userChoice + computerChoice) {
         case "rs":
         case "pr":
         case "sp":
-            console.log("USER WINS.");
+            win(userChoice, computerChoice);
             break;
         case "rp":
         case "ps":
         case "sr":
-            console.log("USER LOSES.");
+            lose(userChoice, computerChoice);
             break;
-            case "rs":
+        case "rs":
         case "rr":
         case "pp":
         case "ss":
-            console.log("It's a draw.");
+            draw(userChoice, computerChoice);
             break;
-        
+
     }
 }
 
