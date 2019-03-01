@@ -20,12 +20,18 @@ function win(userChoice, computerChoice){
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
     const userChoice_div = document.getElementById(userChoice)
+    const userLabel_badge = document.getElementById("user-label")
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`
+
     userChoice_div.classList.add("green-glow");
     setTimeout(() => userChoice_div.classList.remove("green-glow"), 300)
+
+    userLabel_badge.classList.add("green-glow");
+    setTimeout(() => userLabel_badge.classList.remove("green-glow"), 300)
+
 
 }
 
@@ -40,12 +46,17 @@ function lose(userChoice, computerChoice) {
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
     const userChoice_div = document.getElementById(userChoice)
+    const compLabel_badge = document.getElementById("computer-label")
     computerScore++;
     computerScore_span.innerHTML = computerScore
     userScore_span.innerHTML = userScore;
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses ${convertToWord(computerChoice)}${smallCompWord}. You lost....`
+
     userChoice_div.classList.add("red-glow");
     setTimeout(() => userChoice_div.classList.remove("red-glow"), 300)
+
+    compLabel_badge.classList.add("red-glow");
+    setTimeout(() => compLabel_badge.classList.remove("red-glow"), 300)
 }
 
 
@@ -53,9 +64,23 @@ function draw(userChoice, computerChoice) {
     const userChoice_div = document.getElementById(userChoice)
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
+    const userLabel_badge = document.getElementById("user-label")
+    const compLabel_badge = document.getElementById("computer-label")
+
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallCompWord}. It's a tie!....`
     userChoice_div.classList.add("grey-glow");
     setTimeout(() => userChoice_div.classList.remove("grey-glow"), 300)
+
+    // user label
+    userLabel_badge.classList.add("grey-glow");
+    setTimeout(() => userLabel_badge.classList.remove("grey-glow"), 300)
+
+    // comp label
+    compLabel_badge.classList.add("grey-glow");
+    setTimeout(() => compLabel_badge.classList.remove("grey-glow"), 300)
+
+    
+
 }
 
 
