@@ -1,8 +1,6 @@
 # Rock-Paper-Scissors
 
-An application that lets you play Rock, Paper, Scissors against a computer. Users picker between Rock, Paper or Scissors and play against a computer. If the user wins, the user will get one point and vice versa. If it is a draw, scores will stay the same. 
-
-<br>
+An application that lets users play Rock, Paper, Scissors against a computer. Users picker between Rock, Paper or Scissors as well as the computer. If the user wins, the user will get one point and vice versa. If it is a draw, scores will stay the same. 
 
 <b>Technologies</b>: 
 - HTML
