@@ -10,5 +10,7 @@ An application that lets you play Rock, Paper, Scissors against a computer. User
 - JavaScript 
 
 
+<p align="center">
+ <img width="589" alt="Screen Shot 2019-03-23 at 11 42 01 AM" src="https://user-images.githubusercontent.com/43193434/54869001-bf1c1a80-4d60-11e9-8da8-bc1d88fa0cad.png"> 
+</p>
 
-<img width="589" alt="Screen Shot 2019-03-23 at 11 42 01 AM" src="https://user-images.githubusercontent.com/43193434/54869001-bf1c1a80-4d60-11e9-8da8-bc1d88fa0cad.png">
